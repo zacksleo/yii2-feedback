@@ -1,0 +1,21 @@
+{
+  "name": "zacksleo/yii2-feedback",
+  "description": "yii2 feedback module",
+  "type": "yii2-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "zacksleo",
+      "email": "zacksleo@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "yiisoft/yii2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "zacksleo\\yii2\\feedback\\": "src"
+    }
+  }
+}
