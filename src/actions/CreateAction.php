@@ -7,7 +7,6 @@ use yii\base\Action;
 use zacksleo\yii2\feedback\models\Feedback;
 use yii\web\ServerErrorHttpException;
 
-
 class CreateAction extends Action
 {
     public function run()

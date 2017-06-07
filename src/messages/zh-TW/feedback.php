@@ -10,5 +10,4 @@ return [
     'feedback' => '用戶反饋',
     'Feedbacks' => '反饋列表',
     'Update Feedback' => '修改反饋內容',
-
 ];
