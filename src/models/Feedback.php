@@ -55,12 +55,6 @@ class Feedback extends \yii\db\ActiveRecord
         ];
     }
 
-    public function beforeValidate()
-    {
-
-        return parent::beforeValidate();
-    }
-
     /**
      * @inheritdoc
      */
