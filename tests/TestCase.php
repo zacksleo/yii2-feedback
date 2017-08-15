@@ -49,6 +49,9 @@ class TestCase extends \PHPUnit\Framework\TestCase
                     'hostInfo' => 'http://domain.com',
                     'scriptUrl' => 'index.php',
                 ],
+                'user' => [
+                    'identityClass' => 'tests\data\User',
+                ],
                 'i18n' => [
                     'translations' => [
                         'zacksleo/yii2/feedback/*' => [
