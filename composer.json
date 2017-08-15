@@ -13,6 +13,9 @@
   "require": {
     "yiisoft/yii2": "*"
   },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7"
+  },
   "autoload": {
     "psr-4": {
       "zacksleo\\yii2\\feedback\\": "src"
