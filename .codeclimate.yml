@@ -10,11 +10,14 @@ engines:
     enabled: true
   phpmd:
     enabled: true
-    config:
     checks:
       UnusedLocalVariable:
         enabled: false
       Naming/ShortMethodName:
+        enabled: false
+      Naming/ShortVariable:
+        enabled: false
+      CleanCode/StaticAccess:
         enabled: false
 ratings:
   paths:
