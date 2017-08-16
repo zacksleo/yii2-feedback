@@ -19,6 +19,8 @@ engines:
         enabled: false
       CleanCode/StaticAccess:
         enabled: false
+      Controversial/CamelCaseClassName:
+        enabled: false
 ratings:
   paths:
   - "**.php"
