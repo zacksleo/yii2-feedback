@@ -38,6 +38,13 @@ class TestCase extends \PHPUnit\Framework\TestCase
                     'class' => 'yii\db\Connection',
                     'dsn' => 'sqlite::memory:'
                 ],
+                'request' => [
+                    'hostInfo' => 'http://domain.com',
+                    'scriptUrl' => 'index.php',
+                ],
+                'user' => [
+                    'identityClass' => 'tests\data\models\User',
+                ],
                 'i18n' => [
                     'translations' => [
                         'zacksleo/yii2/feedback/*' => [
@@ -52,9 +59,9 @@ class TestCase extends \PHPUnit\Framework\TestCase
                 ],
             ],
             'modules' => [
-                'ad' => [
-                    'class' => 'zacksleo\yii2\ad\Module',
-                    'controllerNamespace' => 'zacksleo\yii2\ad\tests\controllers'
+                'feedback' => [
+                    'class' => 'zacksleo\yii2\feedback\Module',
+                    'controllerNamespace' => 'tests\data\controllers'
                 ]
             ]
         ], $config));

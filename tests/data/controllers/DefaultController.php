@@ -5,10 +5,8 @@ namespace tests\data\controllers;
 use Yii;
 use zacksleo\yii2\feedback\models\Feedback;
 use yii\data\ActiveDataProvider;
-use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * FeedbackController implements the CRUD actions for Feedback model.

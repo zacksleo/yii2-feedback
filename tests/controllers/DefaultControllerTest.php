@@ -13,13 +13,13 @@ class DefaultControllerTest extends TestCase
 
     protected function setUp()
     {
+        parent::setUp();
         $model = new Feedback();
         $model->contact = '18888888888';
         $model->content = 'feedback content';
         $model->type = 1;
         $model->save();
         $this->id = $model->id;
-        parent::setUp();
     }
 
 
@@ -54,7 +54,7 @@ class DefaultControllerTest extends TestCase
     public function testIndex()
     {
         $response = Yii::$app->runAction('feedback/default/index');
-        $this->assertTrue(count($response) == 2);
+        $this->assertTrue(count($response) == 1);
     }
 
     public function testDelete()
