@@ -15,7 +15,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->mockApplication();
+        $this->mockWebApplication();
 
         $this->setupTestDbData();
 
@@ -27,30 +27,16 @@ class TestCase extends \PHPUnit\Framework\TestCase
         $this->destroyApplication();
     }
 
-    /**
-     * Populates Yii::$app with a new application
-     * The application will be destroyed on tearDown() automatically.
-     *
-     * @param array $config The application configuration, if needed
-     * @param string $appClass name of the application class to create
-     */
-    protected function mockApplication($config = [], $appClass = '\yii\web\Application')
+    protected function mockWebApplication($config = [], $appClass = '\yii\web\Application')
     {
-        new $appClass(ArrayHelper::merge([
+        return new $appClass(ArrayHelper::merge([
             'id' => 'testapp',
             'basePath' => __DIR__,
             'vendorPath' => $this->getVendorPath(),
             'components' => [
                 'db' => [
                     'class' => 'yii\db\Connection',
-                    'dsn' => 'sqlite::memory:',
-                ],
-                'request' => [
-                    'hostInfo' => 'http://domain.com',
-                    'scriptUrl' => 'index.php',
-                ],
-                'user' => [
-                    'identityClass' => 'tests\data\User',
+                    'dsn' => 'sqlite::memory:'
                 ],
                 'i18n' => [
                     'translations' => [
@@ -66,11 +52,11 @@ class TestCase extends \PHPUnit\Framework\TestCase
                 ],
             ],
             'modules' => [
-                'feedback' => [
-                    'class' => 'zacksleo\yii2\feedback\Module',
-                    'controllerNamespace' => 'tests\data',
-                ],
-            ],
+                'ad' => [
+                    'class' => 'zacksleo\yii2\ad\Module',
+                    'controllerNamespace' => 'zacksleo\yii2\ad\tests\controllers'
+                ]
+            ]
         ], $config));
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\data;
+namespace tests\data\models;
 
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
