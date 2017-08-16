@@ -1,1 +1,4 @@
-<?php
+.idea/
+.DS_store
+/vendor/
+composer.lock
