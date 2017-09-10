@@ -61,4 +61,11 @@ class FeedbackTest extends TestCase
         $this->assertArrayHasKey('updated_at', $labels);
         $this->assertArrayHasKey('created_at', $labels);
     }
+
+    public function testGetStatusList()
+    {
+        $list = Feedback::getStatusList();
+        $this->assertEquals('inactive', $list[0]);
+        $this->assertEquals('active', $list[1]);
+    }
 }

@@ -1,8 +1,8 @@
 <?php
-use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use zacksleo\yii2\feedback\Module;
+use zacksleo\yii2\feedback\models\Feedback;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -14,13 +14,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            'id',
             'contact',
             'content',
             'type',
-            'status',
-            // 'created_at',
-            // 'updated_at',
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    return Feedback::getStatusList()[$model->status];
+                }
+            ],
+            'created_at:datetime',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

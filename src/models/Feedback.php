@@ -19,6 +19,9 @@ use zacksleo\yii2\feedback\Module;
  */
 class Feedback extends \yii\db\ActiveRecord
 {
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+
     /**
      * @inheritdoc
      */
@@ -72,5 +75,13 @@ class Feedback extends \yii\db\ActiveRecord
         $fields = parent::fields();
         unset($fields['id'], $fields['updated_at'], $fields['created_at']);
         return $fields;
+    }
+
+    public static function getStatusList()
+    {
+        return [
+            self::STATUS_INACTIVE => Module::t('feedback', 'inactive'),
+            self::STATUS_ACTIVE => Module::t('feedback', 'active'),
+        ];
     }
 }
