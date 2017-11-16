@@ -1,4 +1,5 @@
 <?php
+
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use zacksleo\yii2\feedback\Module;
@@ -15,7 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             'contact',
-            'content',
+            [
+                'attribute' => 'content',
+                'value' => function ($model) {
+                    return mb_substr($model->content, 0, 20).'...';
+                }
+            ],
             'type',
             [
                 'attribute' => 'status',
