@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'content',
                 'value' => function ($model) {
-                    return mb_substr($model->content, 0, 20).'...';
+                    return mb_substr($model->content, 0, 20) . (mb_strlen($model->content) > 20 ? '...' : '');
                 }
             ],
             'type',
